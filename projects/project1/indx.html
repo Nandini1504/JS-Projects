@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML events</title>
+</head>
+<body style = "background-color: whitesmoke; color: aliceblue">
+    <h2> amazing image </h2>
+    <div>
+        <ul>
+            <li><img width="200 px" id= "owl" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbeautiful%2F&psig=AOvVaw0z8wlFM3PS5pjdRYsnnVLs&ust=1756479295552000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNDP9rbhrY8DFQAAAAAdAAAAABAE"
+                onclick="alert('owl')">
+
+            </li>
+            <li>
+            </li>  
+        </ul>
+    </div>
+    
+</body>
+<script>
+    //document.getElementById('owl').onclick= function(){
+      //  alert("owl clicked")
+    //}
+    document.getElementById('owl').addEventListener('click', function(){
+        alert("owl clicked again")
+    })
+
+
+</script>
+</html>
