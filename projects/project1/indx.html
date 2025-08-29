@@ -8,11 +8,12 @@
 <body style = "background-color: whitesmoke; color: aliceblue">
     <h2> amazing image </h2>
     <div>
-        <ul>
-            <li><img width="200 px" id= "owl" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbeautiful%2F&psig=AOvVaw0z8wlFM3PS5pjdRYsnnVLs&ust=1756479295552000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNDP9rbhrY8DFQAAAAAdAAAAABAE"
-                onclick="alert('owl')">
+        <ul id= "images">
+            <li><img width="200 px" id= "images" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbeautiful%2F&psig=AOvVaw0z8wlFM3PS5pjdRYsnnVLs&ust=1756479295552000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNDP9rbhrY8DFQAAAAAdAAAAABAE"
+                onclick="alert('images')">
 
-            </li>
+            </li><img width="200 px" id= "owl src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbeautiful%2F&psig=AOvVaw0z8wlFM3PS5pjdRYsnnVLs&ust=1756479295552000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNDP9rbhrY8DFQAAAAAdAAAAABAE"
+                onclick="alert('owl')">
             <li>
             </li>  
         </ul>
@@ -24,9 +25,18 @@
       //  alert("owl clicked")
     //}
     document.getElementById('owl').addEventListener('click', function(){
-        alert("owl clicked again")
-    })
+        console.log("owl clicked again")
+        e.preventDefault()// isme kya hoga ki maanle ek image pe click krke humne daal rakha h ki google open ho jaye but open nhi hoga as default cheez prevent ho gyi hai.
+    }, false)
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("image inside url clicked again");
+        e.stopPropagation();// bubbling stop ho jayegi!
+    }, false)
+// jab owl pe click pehle aayega own clicked then clicked inside the ul too aayega!
 
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName)
+    })
 
 </script>
 </html>
