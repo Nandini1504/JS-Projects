@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', 'https://api.github.com/users/Nandini1504')
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText) // isse data string se objectmein change as jab url se response aata h tab vo string mein hi aata h
+            console.log(data.followers) // this ke bina koi utput nhi aayega jab this laga rhe h tabhi aa rha h output as we are telling it ki kis context mein h and kiska response text chahiye.
+        }
+    }// isse continuos 2,3,4 aa jayega console pe state change ho rhi.
+   // console.log(xhr.readyState)// here it will be printed as one but not always , we can track it.
+    xhr.send()
+</script>
+</html>
