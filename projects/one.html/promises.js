@@ -74,3 +74,25 @@ async function promiseFive() {
     
 }// async await cannot handle errors properly
 consumepromiseFive()
+
+async function getAllUsers(){
+    try {
+        const response = await fetch()
+        const data = await response.json() // bracket mei user ka data hoga saara jo api se lenge,users update hone mein time lagta h isiliye isko await kara rhe h
+        console.log(data)
+    } catch (error) {
+        console.log("E: ", error)
+        
+    }
+}
+
+getAllUsers()
+
+fetch('url')
+.then((response) => {
+    return response.json()
+})
+.then((data) =>{
+    console.log(data);
+    
+})// yaha par await ki zaroorat nhi as 1 then khtam hoga execute hona  tabhi dusra shuru hoga execute hona
